@@ -7,7 +7,9 @@ authors = [
     { name = "tavbu31", email = "tavbu31@users.noreply.github.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pyside6>=6.12.0",
+]
 
 [project.scripts]
 new-folder = "new_folder:main"
