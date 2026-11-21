@@ -108,7 +108,11 @@ class MainWindow(QWidget):
             self.update_table(self.student_ids, self.original_grades, self.corrected_grades)
 
     def update_file(self):
-        pass
+        with open(self.selected_file , 'w') as f:
+            f.write('ID,Grade\n')
+            for val in range(len(self.corrected_grades)):
+                f.write(f'{self.student_ids[val]},{self.corrected_grades[val]}\n')
+        
 
     def show_about(self):
         self.about_window.show()
