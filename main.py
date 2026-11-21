@@ -40,7 +40,7 @@ class MainWindow(QWidget):
         self.table.setObjectName('dataTable')
         self.table.setAlternatingRowColors(True)
         self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
-        self.table.setHorizontalHeaderLabels(['____', '____', '____'])
+        self.table.setHorizontalHeaderLabels(['ID', 'Original Grades', 'Corrected Grades'])
         layout.addWidget(self.table)
 
         controls_layout = QHBoxLayout()
@@ -82,6 +82,12 @@ class MainWindow(QWidget):
             next(f)
             for line in f:
                 parts = line.split(',')
+                self.student_ids.append(parts[0])
+                self.original_grades.append(int(parts[1]))
+                self.corrected_grades.append(int(parts[1]))
+        self.update_table(self.student_ids, self.original_grades, self.corrected_grades)
+        
+
 
     def update_table(self, list1, list2, list3):
         for row in range(50):

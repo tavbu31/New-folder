@@ -70,7 +70,8 @@ QSpinBox#numberInput::down-button {
 
 QTableWidget#dataTable {
     background: white;
-    alternate-background-color: #f8fafc;
+    color: #172033;
+    alternate-background-color: rgb(248, 250, 252);
     border: 1px solid #dbe3ef;
     border-radius: 10px;
     gridline-color: #e8edf4;
