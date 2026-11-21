@@ -1,106 +1,133 @@
 QWidget#mainWindow {
-    background: #f4f7fb;
-    color: #172033;
+    background: #0f172a;
+    color: #f8fafc;
     font-family: "Segoe UI";
     font-size: 14px;
 }
 
-QLabel#titleLabel {
-    color: #172033;
-    font-size: 24px;
-    font-weight: 700;
-    padding-bottom: 2px;
-}
-
 QPushButton {
+    background: #334155;
+    color: #f8fafc;
+    border: 1px solid #475569;
     border-radius: 8px;
     padding: 9px 16px;
     min-height: 20px;
     font-weight: 600;
 }
 
-QPushButton#primaryButton {
-    background: #217346;
-    color: white;
-    border: 1px solid #185c37;
+QPushButton:hover {
+    background: #475569;
+    color: #ffffff;
+    border-color: #64748b;
 }
 
-QPushButton#primaryButton:hover {
-    background: #185c37;
+QPushButton:pressed {
+    background: #1e293b;
+    color: #ffffff;
+    border-color: #64748b;
 }
 
-QPushButton#primaryButton:pressed {
-    background: #124b2d;
+QPushButton#loadFileButton {
+    background: #2563eb;
+    color: #ffffff;
+    border: 1px solid #1d4ed8;
 }
 
-QPushButton#secondaryButton {
-    background: white;
-    color: #334155;
-    border: 1px solid #dbe3ef;
+QPushButton#loadFileButton:hover {
+    background: #1d4ed8;
+    color: #ffffff;
+    border-color: #1e40af;
 }
 
-QPushButton#secondaryButton:hover {
-    background: #eef2ff;
-    color: #4338ca;
-    border-color: #c7d2fe;
+QPushButton#loadFileButton:pressed {
+    background: #1e40af;
+    color: #ffffff;
+    border-color: #1e3a8a;
 }
 
-QPushButton#secondaryButton:pressed {
-    background: #e0e7ff;
+QPushButton#aboutButton {
+    background: #475569;
+    color: #f8fafc;
+    border: 1px solid #64748b;
 }
 
-QSpinBox#numberInput {
-    background: white;
-    color: #172033;
-    border: 1px solid #dbe3ef;
+QPushButton#aboutButton:hover {
+    background: #64748b;
+    color: #ffffff;
+    border-color: #94a3b8;
+}
+
+QPushButton#aboutButton:pressed {
+    background: #1e293b;
+    color: #ffffff;
+    border-color: #475569;
+}
+
+QWidget#graphCanvas {
+    background: #1e293b;
+    color: #f8fafc;
+    border: 1px solid #475569;
     border-radius: 8px;
-    padding: 7px 10px;
-    min-width: 110px;
 }
 
-QSpinBox#numberInput:focus {
-    border: 1px solid #6366f1;
+QToolBar#graphToolbar {
+    background: #1e293b;
+    color: #f8fafc;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    padding: 4px;
 }
 
-QSpinBox#numberInput::up-button,
-QSpinBox#numberInput::down-button {
-    width: 0px;
-    border: none;
+QToolBar#graphToolbar QToolButton {
+    background: #334155;
+    color: #f8fafc;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    padding: 4px;
 }
 
-QTableWidget#dataTable {
-    background: white;
-    color: #172033;
-    alternate-background-color: #f8fafc;
-    border: 1px solid #dbe3ef;
+QToolBar#graphToolbar QToolButton:hover {
+    background: #475569;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+QToolBar#graphToolbar QToolButton:pressed,
+QToolBar#graphToolbar QToolButton:checked {
+    background: #1e293b;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+QWidget#aboutWindow,
+QDialog#aboutWindow {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+QLabel#pictureLabel,
+QLabel#nameLabel,
+QLabel#roleLabel,
+QLabel#emailLabel,
+QLabel#linkedinLabel {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+QLabel#pictureLabel {
+    border: 2px solid #3d5a99;
     border-radius: 10px;
-    gridline-color: #e8edf4;
-    selection-background-color: #e0e7ff;
-    selection-color: #172033;
 }
 
-QTableWidget#dataTable::item {
-    color: #172033;
-    padding: 7px 10px;
-    border: none;
+QLabel#nameLabel {
+    color: #f8fafc;
+    font-size: 26px;
+    font-weight: bold;
 }
 
-QTableWidget#dataTable::item:selected {
-    background: #e0e7ff;
-    color: #172033;
-}
-
-QHeaderView::section {
-    background: #eef2f7;
-    color: #475569;
-    border: none;
-    border-right: 1px solid #dde5ef;
-    border-bottom: 1px solid #dbe3ef;
-    padding: 9px 10px;
-    font-weight: 700;
-}
-
-QTableCornerButton::section {
-    background: #eef2f7;
-    border: none;
+QLabel#roleLabel,
+QLabel#emailLabel,
+QLabel#linkedinLabel {
+    color: #e2e8f0;
+    font-size: 15px;
 }
