@@ -43,6 +43,9 @@ class MainWindow(QWidget):
         self.table.setAlternatingRowColors(True)
         self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.table.setHorizontalHeaderLabels(['ID', 'Original Grades', 'Corrected Grades'])
+        self.table.setColumnWidth(0, 180)
+        self.table.setColumnWidth(1, 220)
+        self.table.setColumnWidth(2, 220)
         layout.addWidget(self.table)
 
         controls_layout = QHBoxLayout()
