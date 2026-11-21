@@ -1,6 +1,8 @@
+from pathlib import Path
+
 from PySide6.QtWidgets import (QApplication, QWidget, QPushButton, QSpinBox,
                                QTableWidget, QTableWidgetItem, QVBoxLayout,
-                               QHBoxLayout, QFileDialog)
+                               QHBoxLayout, QFileDialog, QLabel)
 from About import AboutWindow
 
 
@@ -16,35 +18,58 @@ class MainWindow(QWidget):
         self.about_window = AboutWindow()
 
         self.setWindowTitle('Grades Correction')
+        self.setObjectName('mainWindow')
 
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(24, 24, 24, 24)
+        layout.setSpacing(16)
+
+        title = QLabel('Grades Correction')
+        title.setObjectName('titleLabel')
+        layout.addWidget(title)
 
         top_layout = QHBoxLayout()
-        self.open_csv_button = QPushButton()
+        self.open_csv_button = QPushButton('Select CSV File')
+        self.open_csv_button.setObjectName('primaryButton')
         self.open_csv_button.clicked.connect(self.choose_csv_file)
         top_layout.addWidget(self.open_csv_button)
         top_layout.addStretch()
         layout.addLayout(top_layout)
 
         self.table = QTableWidget(50, 3)
+        self.table.setObjectName('dataTable')
+        self.table.setAlternatingRowColors(True)
+        self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.table.setHorizontalHeaderLabels(['____', '____', '____'])
         layout.addWidget(self.table)
 
         controls_layout = QHBoxLayout()
+        controls_layout.setSpacing(10)
         self.number_input = QSpinBox()
+        self.number_input.setObjectName('numberInput')
         self.number_input.setRange(0, 100)
         self.number_input.lineEdit().returnPressed.connect(self.number_enter_pressed)
         controls_layout.addWidget(self.number_input)
 
         self.update_file_button = QPushButton('Update File')
+        self.update_file_button.setObjectName('secondaryButton')
         self.update_file_button.clicked.connect(self.update_file)
         controls_layout.addWidget(self.update_file_button)
 
+        controls_layout.addStretch()
+
         self.about_button = QPushButton('About')
+        self.about_button.setObjectName('secondaryButton')
         self.about_button.clicked.connect(self.show_about)
         controls_layout.addWidget(self.about_button)
 
         layout.addLayout(controls_layout)
+        self.load_stylesheet()
+
+    def load_stylesheet(self):
+        stylesheet_path = Path(__file__).with_name('style.qss')
+        if stylesheet_path.exists():
+            self.setStyleSheet(stylesheet_path.read_text(encoding='utf-8'))
 
     def choose_csv_file(self):
         file_name, _ = QFileDialog.getOpenFileName(self, 'Choose CSV File', '', 'CSV Files (*.csv)')
