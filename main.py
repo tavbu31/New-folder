@@ -77,7 +77,11 @@ class MainWindow(QWidget):
             self.process_csv_file(file_name)
 
     def process_csv_file(self, file_name):
-        pass
+        self.selected_file = file_name
+        with open(self.selected_file, 'r') as f:
+            next(f)
+            for line in f:
+                parts = line.split(',')
 
     def update_table(self, list1, list2, list3):
         for row in range(50):
