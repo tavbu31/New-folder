@@ -100,7 +100,12 @@ class MainWindow(QWidget):
                 self.table.setItem(row, column, QTableWidgetItem(str(value)))
 
     def number_enter_pressed(self):
-        pass
+        factor = self.number_input.value()
+        for i in range(len(self.corrected_grades)):
+            self.corrected_grades[i] = self.original_grades[i] + factor
+            if self.corrected_grades[i] > 100:
+                self.corrected_grades[i] = 100
+            self.update_table(self.student_ids, self.original_grades, self.corrected_grades)
 
     def update_file(self):
         pass
