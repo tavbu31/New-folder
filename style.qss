@@ -59,7 +59,7 @@ QSpinBox#numberInput {
 }
 
 QSpinBox#numberInput:focus {
-    border: 1px solid #6366f1;
+    border: 1px solid #ff0000;
 }
 
 QSpinBox#numberInput::up-button,

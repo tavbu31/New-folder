@@ -1,3 +1,5 @@
+import os
+
 from pathlib import Path
 
 from PySide6.QtWidgets import (QApplication, QWidget, QPushButton, QSpinBox,
@@ -112,6 +114,7 @@ class MainWindow(QWidget):
             f.write('ID,Grade\n')
             for val in range(len(self.corrected_grades)):
                 f.write(f'{self.student_ids[val]},{self.corrected_grades[val]}\n')
+        os.startfile(self.selected_file)
         
 
     def show_about(self):
